@@ -1,20 +1,23 @@
 function anagrams(A) {
-  for (var i = 0; i < A.length; i++) {
+  for (let i = 0; i < A.length; i++) {
     A[i] = A[i]
       .split("")
       .sort()
       .join("");
   }
-  var ans = [];
-  for (var i = 0; i < A.length; i++) {
-    var temp = [i + 1];
-    for (var j = i + 1; j < A.length; j++) {
+  let ans = [];
+  for (let i = 0; i < A.length; i++) {
+    let temp = [i + 1];
+    for (let j = i + 1; j < A.length; j++) {
       if (A[i] == A[j]) {
         temp.push(j + 1);
         A[j] = "";
       }
     }
-    if (A[i] != "") ans.push(temp);
+     if (A[i] != "") {
+      ans.push(temp);
+      console.log(temp)
+     }
   }
 
   return ans;
